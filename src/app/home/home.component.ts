@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HousingLocationComponent } from '../housing-location/housing-location.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-home',
+    standalone: true,
+    template: `
   <section>
     <form>
       <input type="text" placeholder="Filter by city">
       <button class="primary" type="button">Search</button>
     </form>
   </section>
-`,
-  styleUrl: './home.component.css'
+  <section class="results">
+    <app-housing-location></app-housing-location>
+  </section>
+  `,
+    styleUrl: './home.component.css',
+    imports: [
+        CommonModule,
+        HousingLocationComponent
+    ]
 })
 export class HomeComponent {
 
